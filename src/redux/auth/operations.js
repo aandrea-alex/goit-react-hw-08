@@ -1,4 +1,4 @@
-import { axiosInst } from '../api/axiosInst';
+import { axiosInst } from '../../api/axiosInst';
 import { ERR_LOGIN, ERR_REGISTER } from '../../notification/constants';
 import { errNotify } from '../../notification/error-notify';
 import { createAsyncThunk } from '@reduxjs/toolkit';

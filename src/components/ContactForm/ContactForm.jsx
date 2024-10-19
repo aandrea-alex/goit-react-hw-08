@@ -1,7 +1,7 @@
 import { useId } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { addContact } from '../../redux/contactsOps';
+import { addContact } from '../../redux/contacts/operations';
 
 import { INITIAL_CONTACT } from '../../js/constants';
 import { FeedbackSchema } from '../../js/schema';
@@ -11,7 +11,7 @@ import {
   CAPTION_ADD,
   CAPTION_ADDING,
 } from '../../js/constants';
-import { selectError, selectIsAdding } from '../../redux/selectors';
+import { selectError, selectIsAdding } from '../../redux/contacts/selectors';
 import { successNotify } from '../../notification/success-notify';
 import { errNotify } from '../../notification/error-notify';
 import { SUCCESS_ADD, ERR_ADD } from '../../notification/constants';
