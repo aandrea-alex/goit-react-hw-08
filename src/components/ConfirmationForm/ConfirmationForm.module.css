@@ -1,0 +1,9 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.question {
+  color: var(--active-menu-color);
+}

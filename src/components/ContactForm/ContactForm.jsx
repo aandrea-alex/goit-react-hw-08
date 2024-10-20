@@ -75,7 +75,7 @@ const ContactForm = () => {
             </span>
           </div>
         </div>
-        <CustomButton typeBtn="submit">
+        <CustomButton type="submit">
           {isOperation && !isError ? CAPTION_ADDING : CAPTION_ADD}
         </CustomButton>
       </Form>
