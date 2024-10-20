@@ -1,5 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchContacts, deleteContact, addContact, updateContact } from './operations';
+import {
+  fetchContacts,
+  deleteContact,
+  addContact,
+  updateContact,
+} from './operations';
 import { logOut } from '../auth/operations';
 const contactsSlice = createSlice({
   name: 'contacts',
@@ -80,9 +85,8 @@ const contactsSlice = createSlice({
         state.error = null;
         state.isLoading = false;
       })
-      
+
       .addCase('contacts/saveUpdatingItem', (state, action) => {
-        console.log("handleEditItem", action.payload);
         state.updatingItem = action.payload;
       });
   },
