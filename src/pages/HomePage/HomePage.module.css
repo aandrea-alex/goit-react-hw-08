@@ -1,0 +1,31 @@
+.container {
+    min-height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color-gold);
+  }
+  
+  .author {
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: 24px;
+  }
+  
+  .icon {
+    color: var(--accent-color-gold);
+    margin-bottom: 24px;
+  }
+  
+  .large {
+    font-size: 72px;
+  }
+  
+  .lang {
+    font-size: 14px;
+    color: var(--secondary-color);
+    margin-bottom: 24px;
+  }
+  
