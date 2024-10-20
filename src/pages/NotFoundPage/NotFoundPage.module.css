@@ -6,3 +6,11 @@
   justify-content: center;
   color: var(--accent-color);
 }
+
+.title {
+  font-size: 44px;
+  line-height: 1.5;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-align: center;
+}

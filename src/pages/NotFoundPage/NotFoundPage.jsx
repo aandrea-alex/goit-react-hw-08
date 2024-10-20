@@ -6,7 +6,7 @@ const NotFoundPage = () => {
       {' '}
       <DocumentTitle>NotFoundPage</DocumentTitle>
       <div className={styles.container}>
-        <p>Page not found</p>
+        <p className={styles.title}>Page not found</p>
       </div>
     </>
   );
