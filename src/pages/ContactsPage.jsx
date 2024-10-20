@@ -6,9 +6,9 @@ import DocumentTitle from '../components/DocumentTitle';
 import AppSection from '../components/AppSection/AppSection';
 import ContactForm from '../components/ContactForm/ContactForm';
 import SearchBox from '../components/SearchBox/SearchBox';
-import Infinity from '../components/loaders/Infinity/Infinity';
-import ContactsList from '../components/ContactsList/ContactsList';
-import { SEARCH_LABEL } from '../auxiliary/constants';
+import Infinity from '../components/Infinity/Infinity';
+import ContactList from '../components/ContactList/ContactList';
+import { SEARCH_LABEL } from '../js/constants';
 
 const ContactsPage = () => {
   const error = useSelector(selectError);
@@ -26,7 +26,7 @@ const ContactsPage = () => {
         <ContactForm />
         <SearchBox>{SEARCH_LABEL}</SearchBox>
         {isLoading && !error && <Infinity isLoading={isLoading} />}
-        <ContactsList />
+        <ContactList />
       </AppSection>
     </>
   );

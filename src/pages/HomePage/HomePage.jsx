@@ -1,7 +1,7 @@
 
 import { RiContactsBook2Fill } from 'react-icons/ri';
 import DocumentTitle from '../../components/DocumentTitle';
-import styles from './Home.module.css';
+import styles from './HomePage.module.css';
 
 const HomePage = () => {
   return (
