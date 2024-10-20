@@ -82,6 +82,7 @@ const contactsSlice = createSlice({
       })
       
       .addCase('contacts/saveUpdatingItem', (state, action) => {
+        console.log("handleEditItem", action.payload);
         state.updatingItem = action.payload;
       });
   },

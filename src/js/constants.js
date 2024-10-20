@@ -13,5 +13,10 @@ export const CAPTION_ADD = 'Add Contact';
 export const CAPTION_ADDING = 'Adding Contact...';
 export const CAPTION_DELETE = 'Delete';
 export const CAPTION_DELETEING = 'Deleting...';
+export const CAPTION_EDIT = 'Edit';
+export const CAPTION_EDITING = 'Editing...';
+export const CAPTION_UPDATE = 'Update Contact';
+export const CAPTION_UPDATING = 'Updating Contact...';
+
 export const LABEL_NAME = 'Name:';
 export const LABEL_PHONE = 'Number:';

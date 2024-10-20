@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaUser, FaPhone } from 'react-icons/fa';
-import { deleteContact } from '../../redux/contacts/operations.js';
+import { deleteContact, saveUpdatingItemIndex } from '../../redux/contacts/operations.js';
 import CustomButton from '../CustomButton/CustomButton';
 import {
   selectDeletingItem,
+  selectUpdatingItem,
   selectError,
 } from '../../redux/contacts/selectors.js';
-import { CAPTION_DELETE, CAPTION_DELETEING } from '../../js/constants';
+import {
+  CAPTION_DELETE,
+  CAPTION_DELETEING,
+  CAPTION_EDIT,
+  CAPTION_EDITING,
+} from '../../js/constants';
+
 import { SUCCESS_DELETE, ERR_DELETE } from '../../notification/constants.js';
 import { errNotify } from '../../notification/error-notify.js';
 import { successNotify } from '../../notification/success-notify.js';
@@ -20,7 +27,8 @@ const ContactItem = ({ contact: { id, name, number } }) => {
   const [confirmation, setConfirmation] = useState(false);
   const dispatch = useDispatch();
   const isError = useSelector(selectError);
-  const isOperation = useSelector(selectDeletingItem) === id;
+  const isOperationDel = useSelector(selectDeletingItem) === id;
+  const isOperationUpdate = useSelector(selectUpdatingItem) === id;
 
   const handleDeleteItem = () => {
     dispatch(deleteContact(id))
@@ -37,6 +45,10 @@ const ContactItem = ({ contact: { id, name, number } }) => {
     setConfirmation(false);
   };
 
+  const handleEditItem = () => {   
+    dispatch(saveUpdatingItemIndex(id));
+  };
+
   return (
     <React.Fragment>
       <div className={styles.info}>
@@ -47,9 +59,14 @@ const ContactItem = ({ contact: { id, name, number } }) => {
           <FaPhone /> {number}
         </p>
       </div>
-      <CustomButton onClick={() => setConfirmation(true)} type={'button'}>
-        {isOperation && !isError ? CAPTION_DELETEING : CAPTION_DELETE}
-      </CustomButton>
+      <div className={styles.buttons}>
+        <CustomButton onClick={() => setConfirmation(true)} type="button">
+          {isOperationDel && !isError ? CAPTION_DELETEING : CAPTION_DELETE}
+        </CustomButton>
+        <CustomButton onClick={handleEditItem} type="button">
+          {isOperationUpdate && !isError ? CAPTION_EDITING : CAPTION_EDIT}
+        </CustomButton>
+      </div>
       <CustomModal visible={confirmation} setVisible={setConfirmation}>
         <ConfirmationForm
           onOk={handleDeleteItem}
