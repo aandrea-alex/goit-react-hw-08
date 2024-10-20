@@ -13,9 +13,9 @@
 }
 
 .active {
-  color: var(--accent-color-gold);
+  color: var(--accent-color-red);
 }
 
 .link:hover {
-  color: var(--accent-color-gold);
+  color: var(--accent-color-red);
 }
